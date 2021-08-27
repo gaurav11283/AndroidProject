@@ -31,7 +31,7 @@ public class StickyHeaderAdapter<Item extends IItem> extends RecyclerView.Adapte
             return ((SimpleSubItem) item).header.charAt(0);
         } else if (item instanceof SimpleSubExpandableItem && ((SimpleSubExpandableItem) item).header != null) {
             return ((SimpleSubExpandableItem) item).header.charAt(0);
-        }
+        }a
         return -1;
     }
 
