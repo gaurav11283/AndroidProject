@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/drawable/gradient.xml" value="0.20989583333333334" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout-v21/activity_my_base.xml" value="0.1" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/activity_expandable_sample.xml" value="0.22447916666666667" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/activity_help.xml" value="0.2230769230769231" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/activity_main.xml" value="0.18611111111111112" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/activity_multiple_select.xml" value="0.22447916666666667" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/activity_my_base.xml" value="0.1" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/checkbox_item.xml" value="0.2421875" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/expandable_item.xml" value="0.2421875" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/icon_item.xml" value="0.2421875" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/image_item.xml" value="0.2421875" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/inflate_view.xml" value="0.264" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/main_item.xml" value="0.22447916666666667" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/menuheader.xml" value="0.264" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/radio_button_item.xml" value="0.209375" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/simple_image_item.xml" value="0.1" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/simple_item.xml" value="0.264" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/simple_view.xml" value="0.15572916666666667" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/swipable_item.xml" value="0.24166666666666667" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/menu/delete.xml" value="0.2" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/menu/drawer_menu.xml" value="0.2421875" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/menu/search.xml" value="0.2421875" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/menu/sort.xml" value="0.13125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
