@@ -79,6 +79,10 @@ public class MainActivity extends AppCompatActivity implements ItemTouchCallback
                         new PrimaryDrawerItem().withName("Icon Grid Activity").withDescription("Expand to see").withSelectable(false).withIdentifier(7).withIcon(R.drawable.ic_icon),
                         new PrimaryDrawerItem().withName("Image Item Activity").withDescription("Images").withSelectable(false).withIdentifier(9).withIcon(R.drawable.ic_icon),
                         new PrimaryDrawerItem().withName("Sort Item Activity").withDescription("Sort accordingly").withSelectable(false).withIdentifier(10).withIcon(R.drawable.ic_sort),
+                        new PrimaryDrawerItem().withName("ModelIconItem Activity").withDescription("Model icon view").withSelectable(false).withIdentifier(11).withIcon(R.drawable.ic_sort),
+                        new PrimaryDrawerItem().withName("Sticky header Activity").withDescription("Sticky header").withSelectable(false).withIdentifier(12).withIcon(R.drawable.ic_sort),
+                        new PrimaryDrawerItem().withName("Realm Activity").withDescription("Realm Activity").withSelectable(false).withIdentifier(13).withIcon(R.drawable.ic_sort),
+                        new PrimaryDrawerItem().withName("EndlessScrolling List Activity").withDescription("Endless Scroll list Activity").withSelectable(false).withIdentifier(14).withIcon(R.drawable.ic_sort),
 
                         new DividerDrawerItem(),
                         new PrimaryDrawerItem().withName("copyright").withSelectable(false).withIdentifier(8).withIcon(R.drawable.ic_baseline_home_24)
@@ -110,6 +114,18 @@ public class MainActivity extends AppCompatActivity implements ItemTouchCallback
                             }
                             else if (drawerItem.getIdentifier() == 10) {
                                 intent = new Intent(MainActivity.this, SortActivity.class);
+                            }
+                            else if (drawerItem.getIdentifier() == 11) {
+                                intent = new Intent(MainActivity.this, ModelItemActivity.class);
+                            }
+                            else if (drawerItem.getIdentifier() == 12) {
+                                intent = new Intent(MainActivity.this, StickyHeaderActivity.class);
+                            }
+                            else if (drawerItem.getIdentifier() == 13) {
+                                intent = new Intent(MainActivity.this, RealmActivity.class);
+                            }
+                            else if (drawerItem.getIdentifier() == 14) {
+                                intent = new Intent(MainActivity.this, EndlessScrollingActivity.class);
                             }
                             if (intent != null) {
                                 MainActivity.this.startActivity(intent);

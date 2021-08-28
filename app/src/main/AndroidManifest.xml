@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DemorecycletView">
         <activity
+            android:name=".EndlessScrollingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RealmActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ModelItemActivity"
+            android:exported="true" />
+        <activity
             android:name=".StickyHeaderActivity"
             android:exported="true" />
         <activity

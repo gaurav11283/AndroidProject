@@ -1,70 +1,40 @@
 package com.example.demorecycletview;
 
-import android.graphics.Color;
 import androidx.recyclerview.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.mikepenz.fastadapter.FastAdapter;
 import com.mikepenz.fastadapter.IItem;
-import com.timehop.stickyheadersrecyclerview.StickyRecyclerHeadersAdapter;
+import com.turingtechnologies.materialscrollbar.ICustomAdapter;
+import com.turingtechnologies.materialscrollbar.INameableAdapter;
 
-import java.security.SecureRandom;
 import java.util.List;
 
 
-public class StickyHeaderAdapter<Item extends IItem> extends RecyclerView.Adapter implements StickyRecyclerHeadersAdapter {
+public class FastScrollIndicatorAdapter<Item extends IItem> extends RecyclerView.Adapter implements INameableAdapter, ICustomAdapter {
     @Override
-    public long getHeaderId(int position) {
+    public Character getCharacterForElement(int position) {
         IItem item = getItem(position);
-
-        if (item instanceof HeaderItem && ((HeaderItem) item).header != null) {
-            return ((HeaderItem) item).header.charAt(0);
-        } else if (item instanceof SimpleSubItem && ((SimpleSubItem) item).header != null) {
-            return ((SimpleSubItem) item).header.charAt(0);
-        } else if (item instanceof SimpleSubExpandableItem && ((SimpleSubExpandableItem) item).header != null) {
-            return ((SimpleSubExpandableItem) item).header.charAt(0);
+        if (item instanceof SimpleSubItem && ((SimpleSubItem) item).name != null) {
+            return ((SimpleSubItem) item).name.charAt(0);
         }
-        return -1;
+        return ' ';
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateHeaderViewHolder(ViewGroup parent) {
-
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_header, parent, false);
-        return new RecyclerView.ViewHolder(view) {
-        };
-    }
-
-    @Override
-    public void onBindHeaderViewHolder(RecyclerView.ViewHolder holder, int position) {
-        TextView textView = (TextView) holder.itemView;
-
+    public String getCustomStringForElement(int position) {
         IItem item = getItem(position);
-        if (item instanceof SimpleItem && ((HeaderItem) item).header != null) {
-            textView.setText(String.valueOf(((HeaderItem) item).header.charAt(0)));
-        } else if (item instanceof SimpleSubItem && ((SimpleSubItem) item).header != null) {
-            textView.setText(String.valueOf(((SimpleSubItem) item).header.charAt(0)));
-        } else if (item instanceof SimpleSubExpandableItem && ((SimpleSubExpandableItem) item).header != null) {
-            textView.setText(String.valueOf(((SimpleSubExpandableItem) item).header.charAt(0)));
+        if (item instanceof ModelIconItem && ((ModelIconItem) item).getModel().icon.getName() != null) {
+           return ((ModelIconItem) item).getModel().icon.getName();
         }
-        holder.itemView.setBackgroundColor(getRandomColor());
+        return "";
     }
 
-    private int getRandomColor() {
-        SecureRandom rgen = new SecureRandom();
-        return Color.HSVToColor(150, new float[]{
-                rgen.nextInt(359), 1, 1
-        });
-    }
 
-    private FastAdapter<Item> mFastAdapter;
+     private FastAdapter<Item> mFastAdapter;
 
-
-    public StickyHeaderAdapter<Item> wrap(FastAdapter fastAdapter) {
-        this.mFastAdapter = fastAdapter;
+    public FastScrollIndicatorAdapter<Item> wrap(FastAdapter fastAdapter) {
+          this.mFastAdapter = fastAdapter;
         return this;
     }
 
@@ -91,7 +61,6 @@ public class StickyHeaderAdapter<Item extends IItem> extends RecyclerView.Adapte
         return mFastAdapter.getItemViewType(position);
     }
 
-
     @Override
     public long getItemId(int position) {
         return mFastAdapter.getItemId(position);
@@ -101,7 +70,6 @@ public class StickyHeaderAdapter<Item extends IItem> extends RecyclerView.Adapte
     public FastAdapter<Item> getFastAdapter() {
         return mFastAdapter;
     }
-
 
     public Item getItem(int position) {
         return mFastAdapter.getItem(position);
@@ -117,6 +85,7 @@ public class StickyHeaderAdapter<Item extends IItem> extends RecyclerView.Adapte
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return mFastAdapter.onCreateViewHolder(parent, viewType);
     }
+
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
@@ -146,6 +115,7 @@ public class StickyHeaderAdapter<Item extends IItem> extends RecyclerView.Adapte
     public boolean onFailedToRecycleView(RecyclerView.ViewHolder holder) {
         return mFastAdapter.onFailedToRecycleView(holder);
     }
+
 
     @Override
     public void onViewDetachedFromWindow(RecyclerView.ViewHolder holder) {

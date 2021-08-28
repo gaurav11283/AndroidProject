@@ -28,11 +28,15 @@ import java.util.List;
 public class SimpleSubExpandableItem<Parent extends IItem & IExpandable, SubItem extends IItem & ISubItem> extends AbstractExpandableItem<SimpleSubExpandableItem<Parent, SubItem>, SimpleSubExpandableItem.ViewHolder, SubItem> {
 
     public String name;
+    public String header;
 
 
     private OnClickListener<SimpleSubExpandableItem> mOnClickListener;
 
-
+    public SimpleSubExpandableItem<Parent, SubItem> withHeader(String Header) {
+        this.header = Header;
+        return this;
+    }
     public SimpleSubExpandableItem<Parent, SubItem> withName(String Name) {
         this.name = Name;
         return this;

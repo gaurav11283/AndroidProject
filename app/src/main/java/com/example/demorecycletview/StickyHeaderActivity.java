@@ -13,12 +13,14 @@ import com.mikepenz.fastadapter.FastAdapter;
 import com.mikepenz.fastadapter.IItem;
 import com.mikepenz.fastadapter.adapters.ItemAdapter;
 import com.mikepenz.materialize.MaterializeBuilder;
+import com.timehop.stickyheadersrecyclerview.StickyRecyclerHeadersDecoration;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 
-public class StickyHeaderSampleActivity extends AppCompatActivity {
+public class StickyHeaderActivity extends AppCompatActivity {
     private static final String[] headers = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 
     private FastAdapter fastAdapter;
@@ -40,17 +42,11 @@ public class StickyHeaderSampleActivity extends AppCompatActivity {
         final ItemAdapter headerAdapter = new ItemAdapter();
         final ItemAdapter itemAdapter = new ItemAdapter();
 
-        //create our FastAdapter
         fastAdapter = FastAdapter.with(Arrays.asList(headerAdapter, itemAdapter));
         fastAdapter.withSelectable(true);
 
-
-        //configure our fastAdapter
-        //as we provide id's for the items we want the hasStableIds enabled to speed up things
         fastAdapter.setHasStableIds(true);
-
-        //get our recyclerView and do basic setup
-        RecyclerView rv = (RecyclerView) findViewById(R.id.rv);
+        RecyclerView rv = (RecyclerView) findViewById(R.id.recycler);
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setItemAnimator(new DefaultItemAnimator());
         rv.setAdapter(stickyHeaderAdapter.wrap(fastAdapter));
@@ -60,10 +56,10 @@ public class StickyHeaderSampleActivity extends AppCompatActivity {
         rv.addItemDecoration(decoration);
 
         //fill with some sample data
-        headerAdapter.add(new SimpleItem().withName("Header").withIdentifier(1));
+        headerAdapter.add(new HeaderItem().withName("Header").withIdentifier(1));
         List<IItem> items = new ArrayList<>();
         for (int i = 1; i <= 100; i++) {
-            items.add(new SimpleItem().withName("Test " + i).withHeader(headers[i / 5]).withIdentifier(100 + i));
+            items.add(new HeaderItem().withName("Test " + i).withHeader(headers[i / 5]).withIdentifier(100 + i));
         }
         itemAdapter.add(items);
 

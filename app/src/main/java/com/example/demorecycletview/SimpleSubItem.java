@@ -20,9 +20,14 @@ import java.util.List;
 public class SimpleSubItem<Parent extends IItem & IExpandable & ISubItem & IClickable> extends AbstractExpandableItem<Parent, SimpleSubItem.ViewHolder, SimpleSubItem<Parent>> implements IDraggable<SimpleSubItem, IItem> {
 
     public String name;
+    public String header;
 
     private boolean mIsDraggable = true;
 
+    public SimpleSubItem<Parent> withHeader(String header){
+        this.header = header;
+        return this;
+    }
 
     public SimpleSubItem<Parent> withName(String Name) {
         this.name = Name;
