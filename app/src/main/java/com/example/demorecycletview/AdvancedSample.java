@@ -41,10 +41,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import static com.mikepenz.fastadapter.adapters.ItemAdapter.items;
 
-/**
- * This sample showcases compatibility the awesome Sticky-Headers library by timehop
- * https://github.com/timehop/sticky-headers-recyclerview
- */
+
 public class AdvancedSample extends AppCompatActivity {
     private static final String[] headers = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 
@@ -52,8 +49,10 @@ public class AdvancedSample extends AppCompatActivity {
     private ItemAdapter<SimpleItem> mHeaderAdapter;
     private ItemAdapter<IItem> mItemAdapter;
     private ExpandableExtension<IItem> mExpandableExtension;
-
+    Toolbar toolbar;
+    RecyclerView rv;
     private ActionModeHelper<IItem> mActionModeHelper;
+    StickyHeaderAdapter<IItem> stickyHeaderAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,18 +61,35 @@ public class AdvancedSample extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Handle Toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        inIt();
+       setToolbar();
+       setAdapter(savedInstanceState);
+
+    }
+
+    private void inIt() {
+        toolbar = findViewById(R.id.main_toolbar);
+        stickyHeaderAdapter = new StickyHeaderAdapter<>();
+        mExpandableExtension = new ExpandableExtension<>();
+        rv = findViewById(R.id.recycler);
+
+    }
+    public void setToolbar(){
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Advanced Activity");
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(false);
+
+
+    }
+
+    public void setAdapter(Bundle savedInstanceState){
         new MaterializeBuilder().withActivity(this).build();
 
         mHeaderAdapter = items();
         mItemAdapter = items();
-        StickyHeaderAdapter<IItem> stickyHeaderAdapter = new StickyHeaderAdapter<>();
 
-         mExpandableExtension = new ExpandableExtension<>();
 
         mFastAdapter = FastAdapter.with(Arrays.asList(mHeaderAdapter, mItemAdapter), Arrays.<IAdapterExtension<IItem>>asList(mExpandableExtension));
 
@@ -107,11 +123,10 @@ public class AdvancedSample extends AppCompatActivity {
             }
         });
 
-        //we init our ActionModeHelper
+
         mActionModeHelper = new ActionModeHelper<>(mFastAdapter, R.menu.delete, new ActionBarCallBack());
 
-        //get our recyclerView and do basic setup
-        RecyclerView rv = (RecyclerView) findViewById(R.id.recycler);
+
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setItemAnimator(new DefaultItemAnimator());
         rv.setAdapter(stickyHeaderAdapter.wrap(mFastAdapter));
@@ -127,26 +142,19 @@ public class AdvancedSample extends AppCompatActivity {
             }
         });
 
-        //init cache with the added items, this is useful for shorter lists with many many different view types (at least 4 or more
-        //new RecyclerViewCacheUtil().withCacheSize(2).apply(rv, items);
 
-        //set the back arrow in the toolbar
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(false);
-
-        //we define the items
         setItems();
 
-        //restore selections (this has to be done after the items were added
         mFastAdapter.withSavedInstanceState(savedInstanceState);
-    }
+
+       }
 
     private void setItems() {
         SimpleItem sampleItem = new SimpleItem().withName("Header")
                 .withSelectable(false)
                 .withIdentifier(1);
         mHeaderAdapter.add(sampleItem);
-        //fill with some sample data
+
         AtomicInteger id = new AtomicInteger(1);
         List<IItem> items = new ArrayList<>();
         int size = 25;
@@ -186,7 +194,6 @@ public class AdvancedSample extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        //add the values which need to be saved from the adapter to the bundle
         outState = mFastAdapter.saveInstanceState(outState);
         super.onSaveInstanceState(outState);
     }
@@ -194,7 +201,6 @@ public class AdvancedSample extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        //handle the click on the back arrow click
         switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
@@ -205,15 +211,11 @@ public class AdvancedSample extends AppCompatActivity {
         }
     }
 
-    /**
-     * Our ActionBarCallBack to showcase the CAB
-     */
+
     class ActionBarCallBack implements ActionMode.Callback {
 
         @Override
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-            //logic if an item was clicked
-            //return false as we want default behavior to go on
             return false;
         }
 
