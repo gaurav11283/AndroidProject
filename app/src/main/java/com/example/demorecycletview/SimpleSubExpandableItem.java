@@ -99,17 +99,7 @@ public class SimpleSubExpandableItem<Parent extends IItem & IExpandable, SubItem
         ViewCompat.setBackground(viewHolder.view, FastAdapterUIUtils.getSelectableBackground(ctx, Color.RED, true));
 
         viewHolder.txt.setText(name);
-        if (getSubItems() == null || getSubItems().size() == 0) {
-            viewHolder.icon.setVisibility(View.GONE);
-        } else {
-            viewHolder.icon.setVisibility(View.VISIBLE);
-        }
-
-        if (isExpanded()) {
-            ViewCompat.setRotation(viewHolder.icon, 0);
-        } else {
-            ViewCompat.setRotation(viewHolder.icon, 180);
-        }
+        viewHolder.icon.setVisibility(View.VISIBLE);
     }
 
     @Override

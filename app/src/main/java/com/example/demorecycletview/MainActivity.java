@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements ItemTouchCallback
                         new PrimaryDrawerItem().withName("Sticky header Activity").withDescription("Sticky header").withSelectable(false).withIdentifier(12).withIcon(R.drawable.ic_sort),
                         new PrimaryDrawerItem().withName("Realm Activity").withDescription("Realm Activity").withSelectable(false).withIdentifier(13).withIcon(R.drawable.ic_sort),
                         new PrimaryDrawerItem().withName("EndlessScrolling List Activity").withDescription("Endless Scroll list Activity").withSelectable(false).withIdentifier(14).withIcon(R.drawable.ic_sort),
-                        new PrimaryDrawerItem().withName("Advanced List Activity").withDescription("Advanced list Activity").withSelectable(false).withIdentifier(15).withIcon(R.drawable.ic_sort),
+                        new PrimaryDrawerItem().withName("Advanced Activity").withDescription("with sticky header,expand list,multiselect").withSelectable(false).withIdentifier(15).withIcon(R.drawable.ic_sort),
 
                         new DividerDrawerItem(),
                         new PrimaryDrawerItem().withName("copyright").withSelectable(false).withIdentifier(8).withIcon(R.drawable.ic_baseline_home_24)
