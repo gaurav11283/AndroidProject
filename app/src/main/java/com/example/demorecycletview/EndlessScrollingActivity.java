@@ -36,7 +36,7 @@ public class EndlessScrollingActivity extends AppCompatActivity implements ItemT
     private FastItemAdapter<SimpleItem> fastItemAdapter;
     private ItemAdapter footerAdapter;
 
-    //drag & drop
+
     private SimpleDragCallback touchCallback;
     private ItemTouchHelper touchHelper;
 
@@ -48,7 +48,7 @@ public class EndlessScrollingActivity extends AppCompatActivity implements ItemT
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
+       Toolbar toolbar = findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
 
 

@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DemorecycletView">
         <activity
+            android:name="UdemyPractice.Main2Activity"
+            android:exported="true" />
+        <activity
+            android:name="UdemyPractice.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AdvancedSample"
+            android:exported="true" />
+        <activity
             android:name=".EndlessScrollingActivity"
             android:exported="true" />
         <activity

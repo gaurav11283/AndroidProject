@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/PracticeLayout/activity_main2.xml" value="0.2265625" />
         <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/drawable/gradient.xml" value="0.20989583333333334" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/drawable/ic_sort.xml" value="0.24270833333333333" />
         <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout-v21/activity_my_base.xml" value="0.1" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/UdemyLayout/activity_main2.xml" value="0.2265625" />
         <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/activity_expandable_sample.xml" value="0.22447916666666667" />
         <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/activity_help.xml" value="0.2230769230769231" />
         <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/activity_main.xml" value="0.18611111111111112" />
+        <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/activity_model_item.xml" value="0.10677083333333333" />
         <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/activity_multiple_select.xml" value="0.22447916666666667" />
         <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/activity_my_base.xml" value="0.1" />
         <entry key="..\:/Demo Projetcts/DemoRecyclerView/app/src/main/res/layout/checkbox_item.xml" value="0.2421875" />
